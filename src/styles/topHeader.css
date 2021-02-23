@@ -1,0 +1,13 @@
+.header{
+  background-image: url('../../static/backgroundImage.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo-image{
+  margin-left:80px;
+  width: 200px;
+  height:200px;
+}

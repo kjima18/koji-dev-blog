@@ -1,5 +1,13 @@
 import React from "react"
+import Layout from "../components/layout"
+import PostLink from "../components/post-link"
 
-export default function Home() {
-  return <div>Hello world!</div>
+const Home = () => {
+  return(
+    <Layout>
+      <PostLink/>
+    </Layout>
+  )
 }
+
+export default Home;
