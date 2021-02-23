@@ -28,6 +28,11 @@
     object-fit: cover;
 }
 
+.post-link-anchor {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 575px) {
   .post-link {
     grid-template-columns: 1fr;
