@@ -7,7 +7,7 @@ const TopHeader = () => {
   return(
     <header className='header'>
       <Link to="/">
-          <img src={Logo} className="logo-image" alt="logo"></img>
+        <img src={Logo} className="logo-image" alt="logo"></img>
       </Link>
     </header>
   )

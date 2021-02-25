@@ -1,5 +1,26 @@
 .layout {
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1000px;
   padding: 0 1.1rem 1.45rem;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.main{
+  display: block;
+  width: 720px;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 700px){
+  .layout {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0 1.1rem 1.45rem;
+  }
+
+  .main{
+    width: 320px;
+  }
 }
