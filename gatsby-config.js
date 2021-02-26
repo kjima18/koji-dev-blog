@@ -27,6 +27,17 @@ module.exports = {
         gfm: true,
         plugins: [],
       }
-    }
+    },
+    {
+      resolve: `gatsby-remark-prismjs`,
+      options: {
+        classPrefix: "language-",
+        inlineCodeMarker: null,
+        aliases: {},
+        showLineNumbers: true,
+        noInlineHighlight: false,
+      }
+    },
+    `gatsby-remark-code-titles`
   ]
 }
