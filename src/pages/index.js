@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 
 const Home = ({ data }) => {
   return(
-    <Layout>
+    <Layout tags={data.allContentfulTag.edges}>
       <SEO title="Koji Dev Blog" description="created by Gatsby.js" />
       {data.allContentfulPost.edges.map(edge =>
         <PostLink key={edge.node.slug} post={edge.node}/>
@@ -33,7 +33,19 @@ export const query = graphql`
             description
           }
           slug
+          tags {
+            title
+            slug
+          }
           updatedAt(locale: "ja-JP", formatString: "YYYY年MM月DD日")
+        }
+      }
+    }
+    allContentfulTag {
+      edges {
+        node {
+          title
+          slug
         }
       }
     }
