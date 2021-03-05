@@ -19,7 +19,7 @@ export default Home;
 
 export const query = graphql`
   query allContentfulPost {
-    allContentfulPost {
+    allContentfulPost(sort: {fields: createdAt, order: DESC}) {
       edges {
         node {
           title
@@ -37,6 +37,7 @@ export const query = graphql`
             title
             slug
           }
+          createdAt(locale: "ja-JP", formatString: "YYYY年MM月DD日")
           updatedAt(locale: "ja-JP", formatString: "YYYY年MM月DD日")
         }
       }
