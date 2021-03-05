@@ -1,17 +1,13 @@
-import React, { useEffect } from "react"
+import React from "react"
 import "../styles/post.css"
 import Layout from "../components/layout";
 import SEO from "../components/seo"
-import Prism from 'prismjs'
 
 const Post = ({ pageContext }) => {
   const { title, createdAt, image, tags } = pageContext.post;
   const description = pageContext.post.description.description;
   const body = pageContext.post.body.childMarkdownRemark.html;
   const tagLists = pageContext.tags;
-  useEffect(() => {
-    Prism.highlightAll()
-  })
 
   return(
     <Layout tags={tagLists}>
@@ -32,4 +28,3 @@ const Post = ({ pageContext }) => {
 }
 
 export default Post;
-

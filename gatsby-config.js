@@ -25,19 +25,25 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: [],
+        plugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+            options: {
+              className: 'gatsby-code-title',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            }
+          },
+        ],
       }
-    },
-    {
-      resolve: `gatsby-remark-prismjs`,
-      options: {
-        classPrefix: "language-",
-        inlineCodeMarker: null,
-        aliases: {},
-        showLineNumbers: true,
-        noInlineHighlight: false,
-      }
-    },
-    `gatsby-remark-code-titles`
+    }
   ]
 }

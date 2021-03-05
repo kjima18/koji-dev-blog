@@ -1,2 +1,17 @@
 /* ブラウザで表示処理が行われる際の処理 */
 /* https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/ */
+.gatsby-code-title {
+  background: #2e96b5;
+  color: #eee;
+  margin-left: 3px;
+  padding: 6px 12px;
+  font-size: 0.8em;
+  line-height: 1;
+  font-weight: bold;
+  display: table;
+  border-radius: 4px 4px 0 0;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  margin: 0;
+}
