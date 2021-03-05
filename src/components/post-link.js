@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import "../styles/post-link.css"
 
 const PostLink = ({ post }) => {
-  const { title, updatedAt, image } = post;
+  const { title, updatedAt, image, tags } = post;
   const description = post.description.description;
   const pageLink = `/post/${post.slug}/`
 
@@ -17,6 +17,11 @@ const PostLink = ({ post }) => {
           <h2>{title}</h2>
           <p className="post-link-body">{description}</p>
           <p className="post-link-date">{updatedAt}</p>
+          <ul className="post-link-tags">
+            {tags && tags.map(({ title, slug }) =>
+              <li key={slug}>#{title}</li>
+            )}
+          </ul>
         </div>
       </div>
     </Link>

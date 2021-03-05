@@ -1,25 +1,34 @@
-import React from "react"
+import React from 'react';
+import PropTypes from "prop-types"
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
-const Home = ({ data }) => {
+const PostByTag = ({ pageContext, data }) => {
+  const tag = pageContext.tag
+  const tags = pageContext.tags
+  const posts = data.allContentfulPost
+
   return(
-    <Layout tags={data.allContentfulTag.edges}>
-      <SEO title="Koji Dev Blog" description="created by Gatsby.js" />
-      {data.allContentfulPost.edges.map(edge =>
+    <Layout tags={tags}>
+      <SEO title={tag} description={tag} />
+      {posts && posts.edges.map(edge =>
         <PostLink key={edge.node.slug} post={edge.node}/>
       )}
     </Layout>
   )
 }
 
-export default Home;
+PostByTag.propTypes = {
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+  })
+}
 
 export const query = graphql`
-  query allContentfulPost {
-    allContentfulPost {
+  query allContentfulPostByTag($tag: String) {
+    allContentfulPost(filter: {tags: {elemMatch: {slug: {eq: $tag}}}}) {
       edges {
         node {
           title
@@ -41,13 +50,6 @@ export const query = graphql`
         }
       }
     }
-    allContentfulTag {
-      edges {
-        node {
-          title
-          slug
-        }
-      }
-    }
   }
 `
+export default PostByTag;
