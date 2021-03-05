@@ -28,4 +28,3 @@ const Post = ({ pageContext }) => {
 }
 
 export default Post;
-
