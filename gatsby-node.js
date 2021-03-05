@@ -61,4 +61,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     })
   });
+
+  tags.forEach(tag => {
+    createPage({
+      path: `/${tag.node.slug}/`,
+      component: path.resolve("./src/templates/post-by-tag.js"),
+      context: {
+        tag: tag.node.slug,
+        tags: tags
+      }
+    })
+  });
 }

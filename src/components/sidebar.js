@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import '../styles/sidebar.css'
 import Account from '../../static/account.jpg';
 
@@ -14,11 +15,13 @@ const Sidebar = ({ tags }) => {
       </div>
       <div className='sidebar__item'>
         <h3 className='sidebar-title'>タグ</h3>
-        <ul className='tags'>
-          {tags && tags.map((tag) =>
-            <li key={tag.node.slug}>#{tag.node.title}</li>
-          )}
-        </ul>
+          <ul className='tags'>
+            {tags && tags.map((tag) =>
+              <Link key={tag.node.slug} to={`/${tag.node.slug}/`} className='tag-link'>
+                <li>#{tag.node.title}</li>
+              </Link>
+            )}
+          </ul>
       </div>
     </div>
   )
