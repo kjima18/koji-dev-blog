@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo"
 
 const Post = ({ pageContext }) => {
-  const { title, updatedAt, image, tags } = pageContext.post;
+  const { title, createdAt, image, tags } = pageContext.post;
   const description = pageContext.post.description.description;
   const body = pageContext.post.body.childMarkdownRemark.html;
   const tagLists = pageContext.tags;
@@ -14,7 +14,7 @@ const Post = ({ pageContext }) => {
       <SEO title={title} description={description} />
       <div className="post-header">
         <h1>{title}</h1>
-        <p className="post-date">{updatedAt}</p>
+        <p className="post-date">{createdAt}</p>
         <ul className="post-link-tags">
           {tags && tags.map(({ title, slug }) =>
             <li key={slug}>#{title}</li>

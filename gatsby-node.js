@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
     {
-      allContentfulPost {
+      allContentfulPost(sort: {fields: createdAt, order: DESC}) {
         edges {
           node {
             title
@@ -19,6 +19,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 html
               }
             }
+            createdAt(locale: "ja-JP", formatString: "YYYY年MM月DD日")
             updatedAt(locale: "ja-JP", formatString: "YYYY年MM月DD日")
             description {
               description
