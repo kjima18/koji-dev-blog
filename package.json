@@ -16,6 +16,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "gatsby": "^2.26.1",
+    "gatsby-plugin-google-gtag": "^3.0.0",
     "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-contentful": "^4.6.2",
