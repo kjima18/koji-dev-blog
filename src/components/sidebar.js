@@ -31,7 +31,7 @@ const Sidebar = ({ tags }) => {
           <img src={Account} alt='account'></img>
         </div>
         <h2 className='title'>Koji Dev Blog</h2>
-        <h5 className='description'>仙台でリモート&スクラムを実践するエンジニアの技術ブログ</h5>
+        <h5 className='description'>仙台Uターンエンジニアの技術ブログ</h5>
         <div className='sns-link'>
           <SNSLink/>
         </div>
