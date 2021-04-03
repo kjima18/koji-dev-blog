@@ -1,6 +1,10 @@
 .post-header {
-  margin: 80px auto;
+  margin: 50px auto;
   max-width: 700px;
+}
+
+.post-header > h1 {
+  margin: 10px auto;
 }
 
 .post-date {
@@ -9,19 +13,18 @@
 
 .post-link-tags{
   list-style: none;
-  display:flex;
+  display: flex;
   padding-left: 0;
   margin-top: 5px;
 }
 .post-link-tags li{
   font-size: 13px;
 	margin: 0 .3em .6em 0;
-	padding: .6em;
+	padding: .2em;
 	line-height: 1;
 	text-decoration: none;
-	color: gray;
-	border: 1px solid gray;
-	border-radius: 2em;
+	color: #434343;
+  background:  #dcdcdc;
 }
 
 .post-image {
@@ -35,6 +38,14 @@
 .post-body {
   margin: 80px auto;
   max-width: 700px;
+}
+
+.post-body > h1 {
+  font-size: 28px;
+  margin-top: 60px;
+  padding-left: 10px;
+  border-left: 6px solid #696969;
+  border-bottom: 1px solid #696969;
 }
 
 .post-body img{
