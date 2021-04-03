@@ -73,9 +73,8 @@
 	padding: .6em;
 	line-height: 1;
 	text-decoration: none;
-	color: gray;
-	border: 1px solid gray;
-	border-radius: 2em;
+	color: #434343;
+  background:  #dcdcdc;
 }
 
 .sns-link{

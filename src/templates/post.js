@@ -40,13 +40,13 @@ const Post = ({ location, pageContext }) => {
     <Layout tags={tagLists}>
       <SEO title={title} description={description} />
       <div className="post-header">
-        <h1>{title}</h1>
-        <p className="post-date">{createdAt}</p>
         <ul className="post-link-tags">
           {tags && tags.map(({ title, slug }) =>
             <li key={slug}>#{title}</li>
           )}
         </ul>
+        <h1>{title}</h1>
+        <p className="post-date">{createdAt}</p>
       </div>
       <img src={image.file.url} className="post-image" alt="post-cover"></img>
       <div dangerouslySetInnerHTML={{ __html: body }} className="post-body" />
